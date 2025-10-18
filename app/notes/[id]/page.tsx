@@ -1,6 +1,6 @@
 import { fetchNoteById } from "@/lib/api";
 import { QueryClient } from "@tanstack/react-query";
-import NoteDetailsClient from "../NoteDetails.client";
+import NoteDetailsClient from "./NoteDetails.client";
 
 interface NoteDetailsPageProps {
   params: { id: string };
