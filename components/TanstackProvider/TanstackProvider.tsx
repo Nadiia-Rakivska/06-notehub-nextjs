@@ -13,5 +13,3 @@ export default function TanStackProvider({ children }: TanStackProviderProps) {
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
-
-
