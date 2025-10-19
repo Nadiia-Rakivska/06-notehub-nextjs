@@ -9,7 +9,7 @@ interface NotesHttpResponse {
 export const fetchNotes = async (
   topic: string,
   page: number
-): Promise<{ notes: Note[]; total_pages: number }> => {
+): Promise<{ notes: Note[]; totalPages: number }> => {
   const response = await axios.get<NotesHttpResponse>(
     "https://notehub-public.goit.study/api/notes",
     {
@@ -26,7 +26,7 @@ export const fetchNotes = async (
   );
   return {
     notes: response.data.notes,
-    total_pages: response.data.totalPages,
+    totalPages: response.data.totalPages,
   };
 };
 

@@ -6,18 +6,17 @@ import {
 import NotesClient from "./Notes.client";
 import { fetchNotes } from "@/lib/api";
 
-interface NotePageProps {
-  params: Promise<{ noteId: string; page: number }>;
-}
 
-export default async function NotePage({ params }: NotePageProps) {
-  const { noteId, page } = await params;
+
+
+export default async function NotePage() {
+ 
 
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["note", noteId, page],
-    queryFn: () => fetchNotes(noteId, page),
+    queryKey: ["notes", "", 1],
+    queryFn: () => fetchNotes("", 1),
   });
 
   return (
