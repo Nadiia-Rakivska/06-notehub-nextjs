@@ -22,6 +22,7 @@ export default async function NotePage() {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <NotesClient />
+       <div id="modal-root"></div>
     </HydrationBoundary>
   );
 }
